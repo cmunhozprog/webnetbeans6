@@ -29,16 +29,17 @@ public class MeuPrimeiroServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nome = request.getParameter("nome");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MeuPrimeiroServlet</title>");            
+            out.println("<title>"+nome+"</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MeuPrimeiroServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Meu nome é: " +nome+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
